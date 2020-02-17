@@ -1,0 +1,39 @@
+{
+  "name": "@apichef/request-builder",
+  "version": "0.0.5",
+  "description": "Build REST API request config using fluent syntax. Inspired by Laravel Eloquent ORM.",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
+    "build": "tsc -p .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apichef/request-builder.git"
+  },
+  "keywords": [
+    "apichef",
+    "rest",
+    "api",
+    "request"
+  ],
+  "author": "Milroy E. Fraser",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apichef/request-builder/issues"
+  },
+  "homepage": "https://github.com/apichef/request-builder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  }
+}
