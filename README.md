@@ -1,3 +1,5 @@
+![build](https://github.com/apichef/request-builder/workflows/build/badge.svg)
+
 # Build REST API request config using fluent syntax. Inspired by Laravel Eloquent ORM.
 
 ## Install
