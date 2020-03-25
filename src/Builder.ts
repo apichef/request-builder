@@ -34,7 +34,11 @@ export abstract class Builder {
         return  this.request(new RequestConfig(url, HttpMethod.GET));
     }
 
-    public get (id?: string): Promise<any> {
+    public get (): Promise<any> {
+        return  this.all();
+    }
+
+    public find (id?: string): Promise<any> {
         const url = id === undefined ? `/${this._resource}` : `/${this._resource}/${id}`;
 
         return this.request(new RequestConfig(this.appendQueryString(url), HttpMethod.GET));

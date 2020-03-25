@@ -22,7 +22,7 @@ describe('builder', () => {
         })
 
         test('generates fetch single resource request config when id is given', async () => {
-            const { url, method } = await new Api('posts').get('pid007')
+            const { url, method } = await new Api('posts').find('pid007')
 
             expect(url).toBe('/posts/pid007')
             expect(method).toBe(HttpMethod.GET)
@@ -77,7 +77,7 @@ describe('builder', () => {
             test('generates fetch resource request config with includes', async () => {
                 const { url, method } = await new Api('posts')
                     .with('author')
-                    .get('pid007')
+                    .find('pid007')
 
                 expect(url).toBe('/posts/pid007?include=author')
                 expect(method).toBe(HttpMethod.GET)
@@ -86,7 +86,7 @@ describe('builder', () => {
             test('with accepts relationships an an array', async () => {
                 const { url, method } = await new Api('posts')
                     .with(['author', 'comments', 'tags'])
-                    .get('pid007')
+                    .find('pid007')
 
                 // /posts/pid007?include=author,comments,tags
                 expect(url).toBe('/posts/pid007?include=author%2Ccomments%2Ctags')
@@ -132,7 +132,7 @@ describe('builder', () => {
             test('generates fetch resource request config with includes', async () => {
                 const { url, method } = await new Api('posts')
                     .without('author')
-                    .get('pid007')
+                    .find('pid007')
 
                 expect(url).toBe('/posts/pid007?exclude=author')
                 expect(method).toBe(HttpMethod.GET)
@@ -141,7 +141,7 @@ describe('builder', () => {
             test('without accepts relationships an an array', async () => {
                 const { url, method } = await new Api('posts')
                     .without(['author', 'comments', 'tags'])
-                    .get('pid007')
+                    .find('pid007')
 
                 // /posts/pid007?exclude=author,comments,tags
                 expect(url).toBe('/posts/pid007?exclude=author%2Ccomments%2Ctags')

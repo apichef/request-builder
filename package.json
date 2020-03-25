@@ -1,6 +1,6 @@
 {
   "name": "@apichef/request-builder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Build REST API request config using fluent syntax. Inspired by Laravel Eloquent ORM.",
   "main": "lib/index.js",
   "types": "lib",
