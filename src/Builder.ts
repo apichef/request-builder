@@ -46,8 +46,8 @@ export abstract class Builder {
 
     // mutate
 
-    public store (data: any): Promise<any> {
-        return this.request(new RequestConfig(`/${this._resource}`, HttpMethod.POST, data))
+    public save (data: any, method: HttpMethod = HttpMethod.POST): Promise<any> {
+        return this.request(new RequestConfig(`/${this._resource}`, method, data))
     }
 
     // build query

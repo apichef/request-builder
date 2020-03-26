@@ -29,13 +29,22 @@ describe('builder', () => {
         })
     })
 
-    describe('store', () => {
+    describe('save', () => {
         test('generates create resource request config', async () => {
             const payload = { foo: 'bar' };
-            const { url, method, data } = await new Api('posts').store(payload)
+            const { url, method, data } = await new Api('posts').save(payload)
 
             expect(url).toBe('/posts')
             expect(method).toBe(HttpMethod.POST)
+            expect(data).toBe(payload)
+        })
+
+        test('generates update resource request config', async () => {
+            const payload = { foo: 'bar' };
+            const { url, method, data } = await new Api('posts').save(payload, HttpMethod.PATCH)
+
+            expect(url).toBe('/posts')
+            expect(method).toBe(HttpMethod.PATCH)
             expect(data).toBe(payload)
         })
     })
